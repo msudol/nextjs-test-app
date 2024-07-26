@@ -9,7 +9,7 @@ import { allBlogs } from 'contentlayer/generated'
 import Main from './Main'
 
 // cognito configuration accessible app-wide wherever we decide to drop it
-export function App({ signOut, user } : WithAuthenticatorProps) {
+function Auth({ signOut, user } : WithAuthenticatorProps) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <ConfigureAmplifyClientSide />
@@ -21,7 +21,7 @@ export function App({ signOut, user } : WithAuthenticatorProps) {
 
 export default async function Page() {
   // adds authentication
-  withAuthenticator(App)
+  withAuthenticator(Auth)
   const sortedPosts = sortPosts(allBlogs)
   const posts = allCoreContent(sortedPosts)
   return <Main posts={posts} />
