@@ -8,7 +8,6 @@ import type { AppProps } from 'next/app';
 import { Authenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import { fetchUserAttributes } from 'aws-amplify/auth';
-import outputs from '@/amplify_outputs.json';
 import '@aws-amplify/ui-react/styles.css';
 
 export default function Page() {
